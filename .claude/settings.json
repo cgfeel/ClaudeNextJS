@@ -9,9 +9,18 @@
     "CLAUDE_CODE_EFFORT_LEVEL": "max"
   },
   "permissions": {
-    "allow": [],
-    "deny": []
+    "allow": [
+      "Red",
+      "write",
+      "Bash(npm *)",
+      "Bash(git *)",
+      "Bash(node *)"
+    ],
+    "deny": [
+      "Bash(rm -rf *)"
+    ]
   },
+  "autoCompactThreshold": 80,
   "alwaysThinkingEnabled": false,
   "theme": "dark"
 }

@@ -1,0 +1,19 @@
+{
+  "success_response": {
+    "success": true,
+    "data": "<返回数据>"
+  },
+  "error_response": {
+    "success": false,
+    "error": "<错误数据>"
+  },
+  "list_response": {
+    "success": true,
+    "data": "<数据数组>",
+    "pagination": {
+      "page": 1,
+      "pageSize": 20,
+      "total": 100
+    }
+  }
+}

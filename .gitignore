@@ -5,10 +5,22 @@ packages/**/node_modules/
 .pnpm-store/
 
 # 构建输出
+.next/
+.vercel/
 dist/
 build/
 storybook-static
 *.tsbuildinfo
+
+# 数据库
+prisma/dev.db
+prisma/*.db
+prisma/*.db-journal
+src/prisma/dev.db
+src/prisma/*.db
+src/prisma/*.db-journal
+*.db
+*.db-journal
 
 # 环境变量
 .env
@@ -17,6 +29,7 @@ storybook-static
 
 # 日志
 *.log
+npm-debug.log
 logs/
 
 # 系统文件

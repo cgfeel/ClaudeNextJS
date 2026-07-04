@@ -8,7 +8,8 @@ AICoding
 
 ## 技术栈
 
-- 前端 `NextJS 14` + `TypeScript` + `Tailwind CSS`
+- 前端 `NextJS` + `TypeScript` + `Tailwind CSS`
+- 前端构建工具：`pnpm`
 - 后端：`Next.js API Routes`
 - 数据库：`Prisma` + `SQLite`
 - 部署：`Vercel`
@@ -16,17 +17,25 @@ AICoding
 ## 项目结构
 
 ```
-src/
-├── app/            # NextJS App Router 页面
-│   ├── api/        # API 路由
-│   ├── layout.tsx  # 全局布局
-│   └── page.tsx    # 首页
-├── components/     # React 组件
-│   ├── ui/         # 通用 UI 组件
-│   └── features/   # 业务组件
-├── lib/            # 工具函数和配置
-├── prisma/         # 数据库 schema 和迁移
-└── types/          # TypeScript 类型定义
+  src/
+  ├── app/
+  │   ├── api/
+  │   │   └── bookmarks/
+  │   │       └── route.ts          # GET/POST 书签 API
+  │   ├── globals.css               # Tailwind 入口
+  │   ├── layout.tsx                # 全局布局（header + main）
+  │   └── page.tsx                  # 首页
+  ├── components/
+  │   ├── ui/                       # 通用 UI 组件（待开发）
+  │   └── features/                 # 业务组件（待开发）
+  ├── lib/
+  │   ├── prisma.ts                 # Prisma Client 单例
+  │   └── utils.ts                  # 工具函数
+  ├── prisma/
+  │   ├── dev.db                    # SQLite 数据库（已 gitignore）
+  │   └── schema.prisma             # Bookmark 模型
+  └── types/
+      └── index.ts                  # ApiResponse<T> 统一类型
 ```
 
 ## 编码规范
@@ -37,16 +46,30 @@ src/
 - `API` 路由返回统一的格式：`{ success: boolean, data?: unknown, error?: string }`
 - 所有数据库操作通过 `Prisma Client` 执行
 
+## 技术栈版本
+
+| 依赖 | 版本 |
+|------|------|
+| Next.js | ^16.2.9 |
+| React | ^19.2.7 |
+| Tailwind CSS | ^4.3.1 |
+| TypeScript | ^5.6.0 |
+| Prisma | ^5.22.0 |
+| 包管理 | pnpm 10.25.0 |
+
 ## 当前开发状态
 
-- 项目初始化完成
-- 数据库 `Schema` 设计完成
-- 书签 `CRUD API` 开发中
-- 前端页面持续开发
-- 搜索功能持续开发
+- [x] 项目脚手架搭建（Next.js 16 + React 19 + Tailwind CSS 4）
+- [x] 数据库 Schema 设计（Bookmark 模型：id/title/url/description/tags）
+- [x] 统一 ApiResponse 类型、Prisma Client 单例、全局 layout/首页
+- [x] 书签 GET/POST API
+- [ ] 书签 PUT/DELETE API
+- [ ] 书签前端页面（列表、新建、编辑、删除）
+- [ ] 搜索功能
+- [ ] 标签分类管理
 
 ## 注意事项
 
-- `SQLite` 数据库文件在 `prisma/dev.db`，不要提交到 `Git` 仓库
-- 环境变量再 `.env` 文件中，不要提交到 `Git` 仓库
+- `SQLite` 数据库文件在 `src/prisma/dev.db`，不要提交到 `Git` 仓库
+- 环境变量在 `.env` 文件中，不要提交到 `Git` 仓库
 - 所有新功能先创建 `Git` 分支再开发，完成后合并到 `main` 分支

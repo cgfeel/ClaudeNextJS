@@ -106,3 +106,19 @@ API 端点
 ⏺ 已提交并推送：
 
 > 742d60c feat(skills): add git-commit-standard skill
+
+## `skills`: `security-audit`
+
+对指定代码进行安全审计，依照 `OWASP` Top 10 和团队安全规范输出审计报告
+
+示例：
+
+> 请使用安全审计 skill 对 `@src/app/api/` 目录下所有文件进行安全检
+
+⏺ 审计完成，报告已保存至 `.claude/skills/security-audit/resources/report/security-audit-2026-07-05.md`。
+
+审计结果摘要
+
+安全评分：38/100 — 共扫描 3 个文件，发现 12 个问题。
+
+> 备注：代码是 `Claude Code` 生成的，用的模型是 `deepseek-v4-pro`，审计报告也是惨不忍睹。结果说明 AI 确实可以辅助编程，但不是代替编程

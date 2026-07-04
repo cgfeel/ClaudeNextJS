@@ -1,3 +1,13 @@
+import { BookmarkCard } from "@/components/BookmarkCard";
+import { BookmarkCardProps } from "@/components/BookmarkCard/types";
+
+const defaultProps: BookmarkCardProps = {
+  title: "测试书签",
+  url: "https://example.com",
+  description: "这是一个测试书签的描述",
+  tags: "react, typescript, nextjs",
+};
+
 export default function HomePage() {
   return (
     <div className="flex flex-col items-center justify-center gap-6 py-20">
@@ -5,7 +15,8 @@ export default function HomePage() {
         欢迎使用 AICoding
       </h2>
       <p className="max-w-md text-center text-gray-600">
-        基于 Claude Code 构建的书签管理工具，支持收藏、搜索、分类管理你的在线资源。
+        基于 Claude Code
+        构建的书签管理工具，支持收藏、搜索、分类管理你的在线资源。
       </p>
       <div className="flex gap-3">
         <a
@@ -15,6 +26,7 @@ export default function HomePage() {
           查看书签 API
         </a>
       </div>
+      <BookmarkCard {...defaultProps} />
     </div>
   );
 }

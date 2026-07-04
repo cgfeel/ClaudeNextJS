@@ -2,6 +2,49 @@
 
 `Vibe Coding` 学习，通过 `Claude Code` 创建一个 `NextJS` 项目
 
+## `skills`: `react-component-generator`
+
+根据组件名称和功能描述，生成符合项目规范的 `React` 组件文件
+
+示例：
+
+> 请按照 React 组件生成器 skill 的规范，创建一个 BookmarkCard 组件
+>
+> - 组件功能：展示单个书签的卡片，显示标题、URL、描述和标签列表
+> - 需要 props 不需要状态管理
+
+⏺ 创建完成
+
+已按 `react-component-generator` skill 规范生成 3 个文件：
+
+| 文件                                                | 说明                                  |
+| --------------------------------------------------- | ------------------------------------- |
+| `src/components/BookmarkCard/types.ts`              | Props 类型定义（`BookmarkCardProps`） |
+| `src/components/BookmarkCard/index.tsx`             | 组件主文件（函数组件 + named export） |
+| `src/components/BookmarkCard/BookmarkCard.test.tsx` | 测试文件（6 个测试用例）              |
+
+组件功能
+
+- 标题 — 大字号加粗，hover 时变蓝色
+- URL — 蓝色链接，`target="_blank"` 新窗口打开，点击时阻止冒泡
+- 描述 — 灰色文字，最多两行截断（`line-clamp-2`）
+- 标签 — 逗号分隔字符串 → 圆角标签 pill，支持深色模式
+- 可访问性 — 传入 `onClick` 时自动添加 `role="button"` + 键盘事件
+
+使用示例
+
+```tsx
+import { BookmarkCard } from "@/components/BookmarkCard";
+
+<BookmarkCard
+  title="Claude Code 官方文档"
+  url="https://docs.anthropic.com/claude-code"
+  description="Claude Code CLI 工具的完整使用指南"
+  tags="claude, ai, tool"
+  onClick={() => console.log("clicked")}
+/>;
+```
+
 ## `skills`: `api-endpoint-generator`
 
 为指定的数据模型生成标准的 `CRUD API` 端点

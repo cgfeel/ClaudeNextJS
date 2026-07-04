@@ -48,14 +48,14 @@ AICoding
 
 ## 技术栈版本
 
-| 依赖 | 版本 |
-|------|------|
-| Next.js | ^16.2.9 |
-| React | ^19.2.7 |
-| Tailwind CSS | ^4.3.1 |
-| TypeScript | ^5.6.0 |
-| Prisma | ^5.22.0 |
-| 包管理 | pnpm 10.25.0 |
+| 依赖         | 版本         |
+| ------------ | ------------ |
+| Next.js      | ^16.2.9      |
+| React        | ^19.2.7      |
+| Tailwind CSS | ^4.3.1       |
+| TypeScript   | ^5.6.0       |
+| Prisma       | ^5.22.0      |
+| 包管理       | pnpm 10.25.0 |
 
 ## 当前开发状态
 
@@ -73,3 +73,8 @@ AICoding
 - `SQLite` 数据库文件在 `src/prisma/dev.db`，不要提交到 `Git` 仓库
 - 环境变量在 `.env` 文件中，不要提交到 `Git` 仓库
 - 所有新功能先创建 `Git` 分支再开发，完成后合并到 `main` 分支
+
+## 可用 Skills
+
+- 创建 `Api` 时，请读取 `./.claude/skills/api-endpoint-generator/SKILL.md` 并严格遵守其中的规范
+- 提交 `Git` 时，请读取 `./.claude/skills/git-commit-standard/SKILL.md` 并严格遵守其中的规范

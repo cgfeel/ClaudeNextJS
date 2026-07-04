@@ -40,3 +40,26 @@ API 端点
 - 搜索：`search` 参数，模糊匹配 `name` 和 `description`
 - 统一响应格式：`{ success, data?, error? }`，列表额外返回 `pagination`
 - 错误处理：400（参数错误）、404（不存在）、500（服务端异常）
+
+## `skills`: `git-commit-standard`
+
+在提交代码时，自动生成符合 Conventional Commits 规范的 commit message
+
+示例：
+
+> 根据 `git` 的 `skill` 提交本次修改信息
+
+⏺ 新增了一个 skill 文件：`.claude/skills/git-commit-standard/SKILL.md`，用于规范 Git 提交信息。
+
+> 建议的 commit message：
+>
+> feat(skills): add git-commit-standard skill
+>
+> Add a skill that generates Conventional Commits compliant commit messages
+> by analyzing staged changes and determining the correct type/scope.
+>
+> 是否按此提交并推送？
+
+⏺ 已提交并推送：
+
+> 742d60c feat(skills): add git-commit-standard skill

@@ -76,5 +76,7 @@ AICoding
 
 ## 可用 Skills
 
+- 创建 `React` 组件时，请读取 `./.claude/skills/react-component-generator/SKILL.md` 并严格遵守其中的规范
 - 创建 `Api` 时，请读取 `./.claude/skills/api-endpoint-generator/SKILL.md` 并严格遵守其中的规范
 - 提交 `Git` 时，请读取 `./.claude/skills/git-commit-standard/SKILL.md` 并严格遵守其中的规范
+- 安全审计时，请读取 `./.claude/skills/security-audit/SKILL.md` 并严格遵守其中的规范

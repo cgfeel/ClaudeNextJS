@@ -1,0 +1,27 @@
+{
+  "report_date": "2026-07-05",
+  "generated_at": "2026-07-02",
+  "week_range": {
+    "monday": "2026-06-29",
+    "sunday": "2026-07-05",
+    "week_number": 27
+  },
+  "project": "AICoding",
+  "commits": {
+    "total_this_week": 0,
+    "active_days_this_week": 0,
+    "authors_this_week": [],
+    "total_all_time": 8,
+    "last_week_commits": 8
+  },
+  "todos": {
+    "total": 0,
+    "by_type": {
+      "TODO": 0,
+      "FIXME": 0,
+      "HACK": 0
+    }
+  },
+  "previous_reports": [],
+  "is_baseline": true
+}

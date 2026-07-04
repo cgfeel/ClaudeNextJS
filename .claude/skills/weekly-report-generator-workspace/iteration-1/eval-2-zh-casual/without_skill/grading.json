@@ -1,0 +1,9 @@
+{
+  "expectations": [
+    {"text": "生成了周报 Markdown 文件", "passed": true, "evidence": "weekly_report_2026-07-02.md 存在于 outputs 目录"},
+    {"text": "包含全部四大板块：Git 提交记录、TODO 变更、工作总结、下周计划", "passed": true, "evidence": "报告包含 '一、Git 提交汇总'、'二、TODO 扫描结果'、'三、工作总结'、'四、下周计划' 及附加统计章节"},
+    {"text": "包含实际的 git 提交数据（非空占位符）", "passed": true, "evidence": "包含 9 条提交详情的完整表格，含 hash、时间、作者、描述及文件变更统计"},
+    {"text": "包含 TODO/FIXME/HACK 扫描结果", "passed": true, "evidence": "包含 TODO 扫描章节，注明扫描范围为 src/ 及根目录，详细列出扫描关键字"},
+    {"text": "使用中文章节标题", "passed": true, "evidence": "所有章节标题均为中文"}
+  ]
+}

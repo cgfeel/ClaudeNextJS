@@ -1,0 +1,183 @@
+{
+  "metadata": {
+    "skill_name": "weekly-report-generator",
+    "skill_path": ".claude/skills/weekly-report-generator",
+    "executor_model": "deepseek-v4-pro",
+    "analyzer_model": "deepseek-v4-pro",
+    "timestamp": "2026-07-02T14:48:20Z",
+    "evals_run": ["zh-direct", "zh-casual", "en"],
+    "runs_per_configuration": 3
+  },
+  "runs": [
+    {
+      "eval_id": 1,
+      "eval_name": "zh-direct",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 5,
+        "failed": 0,
+        "total": 5,
+        "time_seconds": 89.5,
+        "tokens": 17364,
+        "tool_calls": 15,
+        "errors": 0
+      },
+      "expectations": [
+        {"text": "生成了周报 Markdown 文件", "passed": true, "evidence": "weekly-2026-07-05.md 存在于 outputs 目录"},
+        {"text": "包含全部四大板块", "passed": true, "evidence": "Git 提交记录、TODO 变更、工作总结、下周计划 齐全"},
+        {"text": "包含实际的 git 提交数据", "passed": true, "evidence": "正确处理本周无提交的边界情况，附注历史记录"},
+        {"text": "包含 TODO/FIXME/HACK 扫描结果", "passed": true, "evidence": "TODO 变更章节完整"},
+        {"text": "使用中文章节标题", "passed": true, "evidence": "所有章节标题均为中文"}
+      ],
+      "notes": ["严格遵循模板格式，正确标注本周无提交记录"]
+    },
+    {
+      "eval_id": 1,
+      "eval_name": "zh-direct",
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 5,
+        "failed": 0,
+        "total": 5,
+        "time_seconds": 92.9,
+        "tokens": 15776,
+        "tool_calls": 18,
+        "errors": 0
+      },
+      "expectations": [
+        {"text": "生成了周报 Markdown 文件", "passed": true, "evidence": "weekly_report_2026-06-29_2026-07-05.md 存在"},
+        {"text": "包含全部四大板块", "passed": true, "evidence": "一/二/三/四/五 章节齐全"},
+        {"text": "包含实际的 git 提交数据", "passed": true, "evidence": "包含 15bcd83 等具体 commit hash 和提交详情表格"},
+        {"text": "包含 TODO/FIXME/HACK 扫描结果", "passed": true, "evidence": "按 TODO/FIXME/HACK 类型统计数量"},
+        {"text": "使用中文章节标题", "passed": true, "evidence": "所有标题均为中文"}
+      ],
+      "notes": ["内容更详细但文件命名和目录结构未按统一规范"]
+    },
+    {
+      "eval_id": 2,
+      "eval_name": "zh-casual",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 5,
+        "failed": 0,
+        "total": 5,
+        "time_seconds": 80.7,
+        "tokens": 16808,
+        "tool_calls": 15,
+        "errors": 0
+      },
+      "expectations": [
+        {"text": "生成了周报 Markdown 文件", "passed": true, "evidence": "weekly-2026-07-05.md 存在"},
+        {"text": "包含全部四大板块", "passed": true, "evidence": "📝/🔧/💡/📅 标记的四个章节齐全"},
+        {"text": "包含实际的 git 提交数据", "passed": true, "evidence": "正确处理无提交边界情况"},
+        {"text": "包含 TODO/FIXME/HACK 扫描结果", "passed": true, "evidence": "TODO 章节注明基线周报"},
+        {"text": "使用中文章节标题", "passed": true, "evidence": "所有章节标题均为中文"}
+      ],
+      "notes": ["格式与 eval-1 with_skill 高度一致，模板执行稳定"]
+    },
+    {
+      "eval_id": 2,
+      "eval_name": "zh-casual",
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 5,
+        "failed": 0,
+        "total": 5,
+        "time_seconds": 78.6,
+        "tokens": 15400,
+        "tool_calls": 14,
+        "errors": 0
+      },
+      "expectations": [
+        {"text": "生成了周报 Markdown 文件", "passed": true, "evidence": "weekly_report_2026-07-02.md 存在"},
+        {"text": "包含全部四大板块", "passed": true, "evidence": "一/二/三/四 章节齐全，附统计章节"},
+        {"text": "包含实际的 git 提交数据", "passed": true, "evidence": "9 条提交详情表格，含 hash/时间/作者/描述/文件变更"},
+        {"text": "包含 TODO/FIXME/HACK 扫描结果", "passed": true, "evidence": "扫描范围、关键字、结果完整记录"},
+        {"text": "使用中文章节标题", "passed": true, "evidence": "所有标题均为中文"}
+      ],
+      "notes": ["时间范围扩展到本周之前，覆盖了更多历史数据"]
+    },
+    {
+      "eval_id": 3,
+      "eval_name": "en",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 5,
+        "failed": 0,
+        "total": 5,
+        "time_seconds": 79.3,
+        "tokens": 16641,
+        "tool_calls": 16,
+        "errors": 0
+      },
+      "expectations": [
+        {"text": "Generated a weekly report Markdown file", "passed": true, "evidence": "weekly-2026-07-05.md exists"},
+        {"text": "Contains all 4 sections", "passed": true, "evidence": "📝/🔧/💡/📅 four sections present with Chinese headers"},
+        {"text": "Contains actual git commit data", "passed": true, "evidence": "Correctly reports 0 commits, handles edge case properly"},
+        {"text": "Contains TODO/FIXME/HACK scan results", "passed": true, "evidence": "Baseline TODO section included"},
+        {"text": "Uses Chinese section headers", "passed": true, "evidence": "All Chinese headers even for English prompt"}
+      ],
+      "notes": ["英文提示词仍生成中文标题报告，模板一致性最好"]
+    },
+    {
+      "eval_id": 3,
+      "eval_name": "en",
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 5,
+        "failed": 0,
+        "total": 5,
+        "time_seconds": 90.0,
+        "tokens": 18342,
+        "tool_calls": 17,
+        "errors": 0
+      },
+      "expectations": [
+        {"text": "Generated a weekly report Markdown file", "passed": true, "evidence": "weekly-report-2026-07-02.md exists"},
+        {"text": "Contains all 4 sections", "passed": true, "evidence": "Git 提交记录/TODO 变更/工作总结/下周计划 齐全"},
+        {"text": "Contains actual git commit data", "passed": true, "evidence": "9 条提交的详细表格，含 hash/作者/变更行数"},
+        {"text": "Contains TODO/FIXME/HACK scan results", "passed": true, "evidence": "扫描范围和结果完整记录"},
+        {"text": "Uses Chinese section headers", "passed": true, "evidence": "所有标题为中文"}
+      ],
+      "notes": ["最详细的 without_skill 报告，包含 P0/P1/P2 优先级分级"]
+    }
+  ],
+  "run_summary": {
+    "with_skill": {
+      "pass_rate": {"mean": 1.0, "stddev": 0.0, "min": 1.0, "max": 1.0},
+      "time_seconds": {"mean": 83.2, "stddev": 5.5, "min": 79.3, "max": 89.5},
+      "tokens": {"mean": 16938, "stddev": 386, "min": 16641, "max": 17364}
+    },
+    "without_skill": {
+      "pass_rate": {"mean": 1.0, "stddev": 0.0, "min": 1.0, "max": 1.0},
+      "time_seconds": {"mean": 87.2, "stddev": 7.7, "min": 78.6, "max": 92.9},
+      "tokens": {"mean": 16506, "stddev": 1603, "min": 15400, "max": 18342}
+    },
+    "delta": {
+      "pass_rate": "+0.00",
+      "time_seconds": "-4.0",
+      "tokens": "+432"
+    }
+  },
+  "notes": [
+    "所有断言 100% 通过 — 两个配置都能生成结构完整的周报",
+    "with_skill 报告文件命名统一（weekly-YYYY-MM-DD.md），without_skill 命名不一致",
+    "with_skill 报告严格遵守周一至周日时间范围；without_skill 倾向于拉入更早的历史数据",
+    "with_skill 报告格式一致、简洁有序；without_skill 报告信息量更大但结构各异",
+    "with_skill 平均快 4 秒但 tokens 略多 432 — 差异不显著",
+    "with_skill 在边界情况处理上更一致（本周无提交、无 TODO、基线报告等）",
+    "技能的核心价值在格式一致性、边界情况处理和中文标题标准化"
+  ]
+}

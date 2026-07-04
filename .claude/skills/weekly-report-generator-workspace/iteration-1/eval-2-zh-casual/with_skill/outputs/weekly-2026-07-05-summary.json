@@ -1,0 +1,29 @@
+{
+  "report_date": "2026-07-02",
+  "week_range": {
+    "monday": "2026-06-29",
+    "sunday": "2026-07-05",
+    "week_number": 27
+  },
+  "project_name": "AICoding",
+  "git_summary": {
+    "total_commits": 0,
+    "active_days": 0,
+    "authors": [],
+    "note": "本周无提交记录"
+  },
+  "todo_scan": {
+    "total_todos": 0,
+    "total_fixmes": 0,
+    "total_hacks": 0,
+    "items": [],
+    "note": "当前代码中无未完成的 TODO/FIXME/HACK 标记（项目尚无源代码文件）"
+  },
+  "previous_reports": [],
+  "is_baseline": true,
+  "recent_history_context": {
+    "last_week_commits": 9,
+    "last_commit_date": "2026-06-28",
+    "last_commit": "15bcd83 add custom commands (levi)"
+  }
+}

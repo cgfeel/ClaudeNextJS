@@ -1,0 +1,9 @@
+{
+  "expectations": [
+    {"text": "Generated a weekly report Markdown file", "passed": true, "evidence": "weekly-report-2026-07-02.md exists in outputs directory"},
+    {"text": "Contains all 4 sections: git commits, TODO tracking, work summary, next week plan", "passed": true, "evidence": "Report contains '本周 Git 提交记录', 'TODO 变更', '工作总结', '下周计划' — Chinese headers"},
+    {"text": "Contains actual git commit data (not empty placeholders)", "passed": true, "evidence": "Detailed table with 9 commits including hashes, dates, authors, descriptions, and file changes"},
+    {"text": "Contains TODO/FIXME/HACK scan results", "passed": true, "evidence": "Dedicated TODO section with scan scope, keywords, and results documented"},
+    {"text": "Uses Chinese section headers as the skill is designed for Chinese reports", "passed": true, "evidence": "All section headers in Chinese"}
+  ]
+}

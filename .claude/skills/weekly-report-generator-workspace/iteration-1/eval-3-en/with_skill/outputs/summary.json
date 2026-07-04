@@ -1,0 +1,26 @@
+{
+  "generated_at": "2026-07-02",
+  "week_range": {
+    "monday": "2026-06-29",
+    "sunday": "2026-07-05",
+    "week_number": 27
+  },
+  "project": "AICoding",
+  "git_stats": {
+    "total_commits": 0,
+    "active_days": 0,
+    "authors": [],
+    "commits_by_date": {}
+  },
+  "todo_scan": {
+    "count": 0,
+    "items": [],
+    "note": "当前代码中无未完成的 TODO/FIXME/HACK 标记"
+  },
+  "previous_report": null,
+  "edge_cases_triggered": [
+    "no_commits_this_week",
+    "empty_todo_scan",
+    "first_report_ever"
+  ]
+}

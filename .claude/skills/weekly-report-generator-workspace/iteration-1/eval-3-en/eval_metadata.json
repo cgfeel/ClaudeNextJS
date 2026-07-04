@@ -1,0 +1,32 @@
+{
+  "eval_id": 3,
+  "eval_name": "en",
+  "prompt": "generate a weekly report from my git commits, include TODO tracking and next week planning. output as a markdown file.",
+  "assertions": [
+    {
+      "id": "file-exists",
+      "description": "Generated a weekly report Markdown file",
+      "check": "A .md file exists in outputs directory"
+    },
+    {
+      "id": "all-sections",
+      "description": "Contains all 4 sections: git commits, TODO tracking, work summary, next week plan",
+      "check": "Report contains section headers for commits, TODOs, summary, and planning"
+    },
+    {
+      "id": "git-data",
+      "description": "Contains actual git commit data (not empty placeholders)",
+      "check": "Report lists specific commit hashes or commit messages"
+    },
+    {
+      "id": "todo-scan",
+      "description": "Contains TODO/FIXME/HACK scan results",
+      "check": "Report has a table or list of TODO items with file locations"
+    },
+    {
+      "id": "chinese-headers",
+      "description": "Uses Chinese section headers as the skill is designed for Chinese reports",
+      "check": "Section headers are in Chinese"
+    }
+  ]
+}

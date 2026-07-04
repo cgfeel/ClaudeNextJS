@@ -1,0 +1,32 @@
+{
+  "eval_id": 2,
+  "eval_name": "zh-casual",
+  "prompt": "这周快结束了，能帮我汇总一下本周的工作吗？主要想看 git 提交记录和代码里标注的待办事项，整理成一份报告。",
+  "assertions": [
+    {
+      "id": "file-exists",
+      "description": "生成了周报 Markdown 文件",
+      "check": "outputs 目录中存在 .md 文件"
+    },
+    {
+      "id": "all-sections",
+      "description": "包含全部四大板块：Git 提交记录、TODO 变更、工作总结、下周计划",
+      "check": "报告中存在这四个章节标题"
+    },
+    {
+      "id": "git-data",
+      "description": "包含实际的 git 提交数据（非空占位符）",
+      "check": "报告中列出了具体的 commit hash 或提交信息"
+    },
+    {
+      "id": "todo-scan",
+      "description": "包含 TODO/FIXME/HACK 扫描结果",
+      "check": "报告中存在 TODO 类型标记或文件位置的表格/列表"
+    },
+    {
+      "id": "chinese-headers",
+      "description": "使用中文章节标题",
+      "check": "章节标题为中文（如 本周概要、Git 提交记录 等）"
+    }
+  ]
+}

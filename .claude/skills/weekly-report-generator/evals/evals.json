@@ -1,0 +1,23 @@
+{
+  "skill_name": "weekly-report-generator",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "帮我生成本周的周报，项目叫 AICoding，我要看看这周都提交了什么代码，还有项目里还有哪些 TODO 没处理完。",
+      "expected_output": "生成一份结构化的中文周报 Markdown 文件，包含本周 Git 提交汇总、TODO/FIXME/HACK 扫描结果、工作总结和下周计划四大板块，保存到 reports/ 目录下。",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "这周快结束了，能帮我汇总一下本周的工作吗？主要想看 git 提交记录和代码里标注的待办事项，整理成一份报告。",
+      "expected_output": "生成周报文件，自动计算本周一至周日的时间范围，使用 git log 收集提交记录，扫描代码注释中的 TODO 标记，输出结构化 Markdown 周报。",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "generate a weekly report from my git commits, include TODO tracking and next week planning. output as a markdown file.",
+      "expected_output": "Generate a weekly report in Chinese format with git commits, TODO scan, work summary, and next week plan sections as a markdown file.",
+      "files": []
+    }
+  ]
+}
